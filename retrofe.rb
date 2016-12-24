@@ -29,7 +29,7 @@ class Retrofe < Formula
       RetroFE will be setup in #{opt_prefix} see http://retrofe.nl for more info.
       RetroFE depends on a backend such as RetroArch to load various emulator cores.
       Run `brew cask install retroarch` to install RetroArch in your Applications folder.
-      Comands `retrofe -help`. To run as an Application ensure app bundle is symlinked.
+      Run `retrofe -help` for commands. To run as an Application ensure app bundle is symlinked.
     EOS
   end
 
