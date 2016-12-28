@@ -7,6 +7,7 @@ class Retrofe < Formula
 
   depends_on "cmake" => :build
   depends_on "gst-plugins-bad"
+  depends_on "gst-plugins-good"
   depends_on "sdl2_mixer"
   depends_on "sdl2_image"
   depends_on "sdl2_ttf"
