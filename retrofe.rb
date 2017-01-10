@@ -1,9 +1,10 @@
 class Retrofe < Formula
   desc "Simple robust frontend designed for MAME cabinets or game centers"
   homepage "http://retrofe.nl"
-  url "https://bitbucket.org/phulshof/retrofe", :using => :hg, :branch => "default", :revision => "iee0a1614e73810e16b7a2184c30c38e614c7a3bb"
-  version "0.7.20"
-  head "https://bitbucket.org/RetroPrime/retrofe", :using => :hg
+  url "https://bitbucket.org/phulshof/retrofe", :using => :hg, :branch => "default", :revision => "f31087ecd55455d9406813bf590576ced30fae84"
+  version "0.7.20b1"
+  skip_clean "Artifacts/mac/RetroFE"
+  head "https://bitbucket.org/phulshof/retrofe", :using => :hg
 
   depends_on "cmake" => :build
   depends_on "gst-plugins-bad"
@@ -20,9 +21,15 @@ class Retrofe < Formula
     system "cmake", "--build", "RetroFE/Build"
     system "python", "Scripts/Package.py", "--os=mac", "--build=full"
 
-    prefix.install "LICENSE.txt", "README.md", Dir["Artifacts/mac/RetroFE/*"]
+    prefix.install Dir.glob("*.txt"), Dir.glob("*.md"), "Artifacts/mac/RetroFE/retrofe", "Artifacts/mac/RetroFE/RetroFE.app"
     bin.mkdir
     bin.install_symlink prefix/"retrofe"
+
+    unless File.directory?("/usr/local/var/RetroFE")
+      var.install "Artifacts/mac/RetroFE"
+    end
+
+    prefix.install_symlink Dir.glob("/usr/local/var/RetroFE/*")
   end
 
   def caveats
