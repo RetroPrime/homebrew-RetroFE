@@ -1,8 +1,8 @@
 class Retrofe < Formula
   desc "Simple robust frontend designed for MAME cabinets or game centers"
   homepage "http://retrofe.nl"
-  url "https://bitbucket.org/phulshof/retrofe", :using => :hg, :branch => "default", :revision => "f31087ecd55455d9406813bf590576ced30fae84"
-  version "0.7.20b1"
+  url "https://bitbucket.org/phulshof/retrofe", :using => :hg, :branch => "default", :revision => "1456834b62a058dce44b6c47074d9484cc9fba82"
+  version "0.7.20b5"
   skip_clean "Artifacts/mac/RetroFE"
   head "https://bitbucket.org/phulshof/retrofe", :using => :hg
 
